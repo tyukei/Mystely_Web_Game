@@ -13,5 +13,6 @@ public class GameController : MonoBehaviour
 
     void GameStart(){
         view.SetStart(false);
+        view.SetStory(true);
     }
 }

@@ -7,6 +7,8 @@ public class GameView : MonoBehaviour
     [SerializeField] private TextMeshProUGUI tmpVersion;
     [Header("Start")]
     [SerializeField] private GameObject objStart;
+    [Header("Story")]
+    [SerializeField] private GameObject objStory;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,5 +18,8 @@ public class GameView : MonoBehaviour
     // Start
     public void SetStart(bool isActive){
         objStart.SetActive(isActive);
+    }
+    public void SetStory(bool isActive){
+        objStory.SetActive(isActive);
     }
 }
