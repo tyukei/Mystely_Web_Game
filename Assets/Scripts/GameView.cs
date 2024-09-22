@@ -27,6 +27,7 @@ public class GameView : MonoBehaviour
     }
     public void SetStory(bool isActive){
         objStory.SetActive(isActive);
+        objStory.transform.GetChild(0).gameObject.SetActive(isActive);
     }
 
     public void SetMystery(bool isActive){
