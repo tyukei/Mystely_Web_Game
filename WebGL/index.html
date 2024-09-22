@@ -54,7 +54,7 @@
 				streamingAssetsUrl: "StreamingAssets",
 				companyName: "jinjabukkaku.online",
 				productName: "mystely_web_game",
-				productVersion: "1.0.6",
+				productVersion: "1.0.7",
 			};
 			var scaleToFit;
 			try {
@@ -76,15 +76,15 @@
 					w = window.innerWidth;
 					h = window.innerHeight;
 
-					var r = 960 / 540;
+					var r = 1920 / 1080;
 
 					if (w * r > window.innerHeight) {
 						w = Math.min(w, Math.ceil(h / r));
 					}
 					h = Math.floor(w * r);
 				} else {
-					w = 540;
-					h = 960;
+					w = 1080;
+					h = 1920;
 				}
 
 				container.style.width = canvas.style.width = w + "px";
