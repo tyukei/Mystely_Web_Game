@@ -9,6 +9,7 @@ public class Mystery_Temple : MonoBehaviour
     [SerializeField] private Button btnEnter;
     [SerializeField] private string chars = "EHILMNPRST"; // Possible characters
     [SerializeField] private string RIGHTANSWER = "SHRINE"; // Correct answer
+    [SerializeField] private GameView view;
 
     private List<int> currentIndexes = new List<int>(); // Tracks the current index of each button's character
     private List<TextMeshProUGUI> texts = new List<TextMeshProUGUI>(); // Text objects to display characters on buttons
@@ -52,7 +53,8 @@ public class Mystery_Temple : MonoBehaviour
         {
             Debug.Log("Correct");
             unlocked = true;
-            this.gameObject.SetActive(false);
+            view.SetMystery(false);
+            view.SetStory2(true);
         }
         else
         {
