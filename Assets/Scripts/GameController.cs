@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private GameView view;
@@ -18,7 +19,7 @@ public class GameController : MonoBehaviour
     }
 
     void GameRestart(){
-        view.SetEnding(false);
-        view.SetStart(true);
+        string sceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(sceneName);
     }
 }

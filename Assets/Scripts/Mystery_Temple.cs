@@ -8,7 +8,7 @@ public class Mystery_Temple : MonoBehaviour
     [SerializeField] private Button[] btns;
     [SerializeField] private Button btnEnter;
     [SerializeField] private string chars = "EHILMNPRST"; // Possible characters
-    [SerializeField] private string RIGHTANSWER = "SHRINE"; // Correct answer
+    [SerializeField] private string RIGHTANSWER = "TEMPLE"; // Correct answer
     [SerializeField] private GameView view;
 
     private List<int> currentIndexes = new List<int>(); // Tracks the current index of each button's character
