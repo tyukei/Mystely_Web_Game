@@ -17,6 +17,8 @@ public class GameView : MonoBehaviour
     [SerializeField] private GameObject objMystery;
     [Header("Story2")]
     [SerializeField] private GameObject objStory2;
+    [SerializeField] private TextMeshProUGUI tmpStory2;
+    [SerializeField] private Image char2Image;
     [Header("Ending")]
     [SerializeField] private GameObject objEnding;
 
@@ -39,8 +41,10 @@ public class GameView : MonoBehaviour
     public void SetMystery(bool isActive){
         objMystery.SetActive(isActive);
     }
-    public void SetStory2(bool isActive){
+    public void SetStory2(bool isActive, string text, int charIndex){
         objStory2.SetActive(isActive);
+        tmpStory2.text = text;
+        char2Image.sprite = charSprites[charIndex];
     }
     public void SetEnding(bool isActive){
         objEnding.SetActive(isActive);
