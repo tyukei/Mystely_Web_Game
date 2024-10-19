@@ -5,7 +5,6 @@ public class StoryModel
 {
     private List<Story> stories = new List<Story>();
     private int currentStoryIndex = 0;
-
     public void AddStories(string rowStory)
     {
         string[] columns = rowStory.Split(',');
@@ -24,8 +23,12 @@ public class StoryModel
         return stories[index];
     }
     public Story NextContent(){
+        if(currentStoryIndex < stories.Count - 1){
         currentStoryIndex+=1;
         return stories[currentStoryIndex];
+        }
+        Story nullStory = new Story("null", "0");
+        return nullStory;
     }
 
     public void PrintStories()

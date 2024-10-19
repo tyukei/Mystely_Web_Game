@@ -7721,7 +7721,6 @@ MonoBehaviour:
   tmpStory: {fileID: 1797410047}
   charSprites:
   - {fileID: -3528331368844175546, guid: 8551ccd68e2b44fdbaeba18320ab041c, type: 3}
-  - {fileID: -3528331368844175546, guid: 8551ccd68e2b44fdbaeba18320ab041c, type: 3}
   - {fileID: 440349691041769485, guid: 11e3883bed59140169ebf587bceed005, type: 3}
   charImage: {fileID: 2062788275}
   objMystery: {fileID: 1644326670}

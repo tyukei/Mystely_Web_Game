@@ -36,6 +36,9 @@ public class GameController : MonoBehaviour
 
     void NextStory(){
         Story nextStory = storyModel.NextContent();
+        if(nextStory.Content == "null"){
+            view.SetMystery(true);
+        }
         view.SetStory(true, nextStory.Content, int.Parse(nextStory.CharacterNumber));
     }
 
