@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameView : MonoBehaviour
 {
@@ -9,12 +10,16 @@ public class GameView : MonoBehaviour
     [SerializeField] private GameObject objStart;
     [Header("Story1")]
     [SerializeField] private GameObject objStory;
+    [SerializeField] private TextMeshProUGUI tmpStory;
+    [SerializeField] private Sprite[] charSprites;
+    [SerializeField] private Image charImage;
     [Header("Mystery")]
     [SerializeField] private GameObject objMystery;
     [Header("Story2")]
     [SerializeField] private GameObject objStory2;
     [Header("Ending")]
     [SerializeField] private GameObject objEnding;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,9 +30,10 @@ public class GameView : MonoBehaviour
     public void SetStart(bool isActive){
         objStart.SetActive(isActive);
     }
-    public void SetStory(bool isActive){
+    public void SetStory(bool isActive, string text, int charIndex){
         objStory.SetActive(isActive);
-        objStory.transform.GetChild(0).gameObject.SetActive(isActive);
+        tmpStory.text = text;
+        charImage.sprite = charSprites[charIndex];
     }
 
     public void SetMystery(bool isActive){

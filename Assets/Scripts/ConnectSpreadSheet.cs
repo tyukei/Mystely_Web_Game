@@ -27,10 +27,7 @@ IEnumerator Method(string _SHEET_NAME, System.Action<List<string>> callback){
 
         // 各行をカンマで分割して列データを表示
         foreach (string row in rows) {
-            string[] columns = row.Split(',');
-            foreach (string column in columns) {
-                rowData.Add(column.Trim());
-            }
+            rowData.Add(row);
         }
         callback(rowData);
     }

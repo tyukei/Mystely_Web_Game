@@ -9,16 +9,18 @@ public class GameController : MonoBehaviour
     [SerializeField] private Button btnStart;
 
     // Story
-    private List<List<string>> storyTexts = new List<List<string>>();
     private ConnectSpreadSheet connectSpreadSheet;
     [SerializeField] private Button btnNextStory;
-
     [SerializeField] private Button btnRestart;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
+
+    private StoryModel storyModel = new StoryModel();
+
     void Start()
     {
 
         btnStart.onClick.AddListener(GameStart);
+        btnNextStory.onClick.AddListener(NextStory);
         btnRestart.onClick.AddListener(GameRestart);
 
         // Story
@@ -26,8 +28,15 @@ public class GameController : MonoBehaviour
     }
 
     void GameStart(){
+        Story firstStory = storyModel.GetContent(1);
         view.SetStart(false);
-        view.SetStory(true);
+        Debug.Log(firstStory.CharacterNumber);
+        view.SetStory(true, firstStory.Content, int.Parse(firstStory.CharacterNumber));
+    }
+
+    void NextStory(){
+        Story nextStory = storyModel.NextContent();
+        view.SetStory(true, nextStory.Content, int.Parse(nextStory.CharacterNumber));
     }
 
     void GameRestart(){
@@ -39,10 +48,11 @@ public class GameController : MonoBehaviour
         if(connectSpreadSheet == null){
             connectSpreadSheet = GetComponent<ConnectSpreadSheet>();
         }
-
-        List<string> texts;
-        connectSpreadSheet.ReLoadGoogleSheet(0, texts => {
-            storyTexts.Add(texts);  
+        connectSpreadSheet.ReLoadGoogleSheet(0, loadedTexts => {
+            foreach (var rowStory in loadedTexts)
+            {
+                storyModel.AddStories(rowStory);
+            }
         });
     }
 }
