@@ -17,6 +17,14 @@ public class GameController : MonoBehaviour
 
     //Mystery
     [SerializeField] private Mystery_Temple mystery_Temple;
+
+    //Explain
+    [SerializeField] private Button btnExplain;
+
+    //Adv
+    [SerializeField] private Button btnAdv;
+    [SerializeField] private Button btnSkipAdv;
+    const string URL = "https://daiko-ji-hp.com/jp/";
     
 
     private GameModel gameModel = new GameModel();
@@ -32,16 +40,25 @@ public class GameController : MonoBehaviour
         // Story
         SetStory();
 
+        //Explain
+        btnExplain.onClick.AddListener(NextExplain);
+
         // Mystery
         mystery_Temple.OnAnswerChecked += HandleAnswerChecked;
+
+        // Adv
+        btnAdv.onClick.AddListener(OpenAdv);
+        btnSkipAdv.onClick.AddListener(SkipAdv);
     }
 
+    // Start
     void GameStart(){
         Story firstStory = gameModel.GetContent(1);
         view.SetStart(false);
         view.SetStory(true, firstStory.Content, int.Parse(firstStory.CharacterNumber));
     }
 
+    // Story
     void NextStory(){
         Story nextStory = gameModel.NextContent();
         if(nextStory.Content == "null"){
@@ -61,14 +78,29 @@ public class GameController : MonoBehaviour
     {
         if (isCorrect)
         {
-            Story firstStory2 = gameModel.GetContent2(1);
-            view.SetStory2(true, firstStory2.Content, int.Parse(firstStory2.CharacterNumber));
+            view.SetExplain(true);
         }
         else
         {
             Debug.Log("Observer: The answer is incorrect.");
         }
     }
+
+    // Explain
+    void NextExplain(){
+        view.SetAdv(true);
+    }
+
+    // Adv
+    void OpenAdv(){
+        Application.OpenURL(URL);
+    }
+    void SkipAdv(){
+        Story firstStory2 = gameModel.GetContent2(1);
+        view.SetStory2(true, firstStory2.Content, int.Parse(firstStory2.CharacterNumber));
+    }
+
+    // Story2
     void NextStory2(){
         Story nextStory2 = gameModel.NextContent2();
         if(nextStory2.Content == "null"){

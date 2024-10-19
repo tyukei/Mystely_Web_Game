@@ -2274,7 +2274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &664577493
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7321,6 +7321,9 @@ MonoBehaviour:
   btnRestart: {fileID: 1307089705}
   btnNextStory2: {fileID: 188532853}
   mystery_Temple: {fileID: 1702343522}
+  btnExplain: {fileID: 1621598114}
+  btnAdv: {fileID: 2039128915}
+  btnSkipAdv: {fileID: 1924000354}
 --- !u!114 &1965238990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7342,6 +7345,8 @@ MonoBehaviour:
   - {fileID: 440349691041769485, guid: 11e3883bed59140169ebf587bceed005, type: 3}
   charImage: {fileID: 2062788275}
   objMystery: {fileID: 1644326670}
+  objExplain: {fileID: 1093120226}
+  objAdv: {fileID: 664577492}
   objStory2: {fileID: 1383453181}
   tmpStory2: {fileID: 1853389946}
   char2Image: {fileID: 715312545}
@@ -7552,31 +7557,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2039128916}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 664577492}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1383453181}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2039128916
 MonoBehaviour:
   m_ObjectHideFlags: 0
