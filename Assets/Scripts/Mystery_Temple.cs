@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -14,6 +15,7 @@ public class Mystery_Temple : MonoBehaviour
     private List<int> currentIndexes = new List<int>(); // Tracks the current index of each button's character
     private List<TextMeshProUGUI> texts = new List<TextMeshProUGUI>(); // Text objects to display characters on buttons
     private bool unlocked = false; // To track if the correct answer has been unlocked
+    public event Action<bool> OnAnswerChecked;
 
     void Start()
     {
@@ -48,13 +50,14 @@ public class Mystery_Temple : MonoBehaviour
         {
             currentAnswer += texts[i].text;
         }
+        bool isCorrect = currentAnswer == RIGHTANSWER; 
+        OnAnswerChecked?.Invoke(isCorrect);
 
-        if (currentAnswer == RIGHTANSWER)
+        if (isCorrect)
         {
             Debug.Log("Correct");
             unlocked = true;
             view.SetMystery(false);
-            view.SetStory2(true);
         }
         else
         {
