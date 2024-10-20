@@ -38,6 +38,8 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        int currentState = model.GetState();
+        SetViewByState(currentState);
         // Start
         btnStart.onClick.AddListener(GameStart);
         // Story
