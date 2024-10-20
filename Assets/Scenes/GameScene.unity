@@ -1827,7 +1827,7 @@ GameObject:
   m_Component:
   - component: {fileID: 447490039}
   m_Layer: 5
-  m_Name: 00Start
+  m_Name: 0Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2269,7 +2269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 664577493}
   m_Layer: 5
-  m_Name: 40Advertisement
+  m_Name: 4Advertisement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2307,7 +2307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 682420100}
   m_Layer: 5
-  m_Name: 60Ending
+  m_Name: 6Ending
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3791,7 +3791,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1093120227}
   m_Layer: 5
-  m_Name: 30Explain
+  m_Name: 3Explain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4564,7 +4564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1240963354}
   m_Layer: 5
-  m_Name: 70UI
+  m_Name: 7UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5221,7 +5221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1383453182}
   m_Layer: 5
-  m_Name: 50Story2
+  m_Name: 5Story2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5403,7 +5403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1446567737
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6066,7 +6066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1644326671}
   m_Layer: 5
-  m_Name: 20Mystery
+  m_Name: 2Mystery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6241,7 +6241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1717972784}
   m_Layer: 5
-  m_Name: 10Story1
+  m_Name: 1Story1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7315,15 +7315,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6516aff5763409ebd60b01c9fdfcd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  view: {fileID: 1965238990}
   btnStart: {fileID: 1043343689}
   btnNextStory: {fileID: 375957171}
-  btnRestart: {fileID: 1307089705}
-  btnNextStory2: {fileID: 188532853}
   mystery_Temple: {fileID: 1702343522}
   btnExplain: {fileID: 1621598114}
   btnAdv: {fileID: 2039128915}
   btnSkipAdv: {fileID: 1924000354}
+  btnNextStory2: {fileID: 188532853}
+  btnRestart: {fileID: 1307089705}
+  btnBack: {fileID: 1446567738}
+  view: {fileID: 1965238990}
 --- !u!114 &1965238990
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,12 +3,21 @@ using UnityEngine;
 
 public class GameModel
 {
+
+    // Story
     private List<Story> stories = new List<Story>();
     private List<Story> stories2 = new List<Story>();
     private int currentStoryIndex = 0;
     private int currentStoryIndex2 = 0;
 
+    // State
+    private CookieManager cookie = new CookieManager();
+    private int currentState = 0;
+    const int MAXSTATE = 6;
 
+    public GameModel(){
+        currentState = cookie.GetStateCookie();
+    }
 
     // Story1
     public void AddStories(string rowStory)
@@ -76,5 +85,31 @@ public class GameModel
         {
             Debug.Log($"Content: {story.Content}, Character Number: {story.CharacterNumber}");
         }
+    }
+
+    // State
+    public void SetNextState(){
+        if(currentState <= MAXSTATE -1){
+        currentState += 1;
+        }
+        cookie.SetStateCookie(currentState);
+        Debug.Log("Set State: "+currentState);
+    }
+    public void SetBackState(){
+        if(currentState-1 >= 0 ){
+        currentState -= 1;
+        }
+        cookie.SetStateCookie(currentState);
+        Debug.Log("Set State: "+currentState);
+    }
+    public void SetResetState(){
+        currentState = 0;
+        cookie.SetStateCookie(currentState);
+        Debug.Log("Set State: "+currentState);
+    }
+
+    public int GetState(){
+        Debug.Log("Get State: "+currentState);
+        return currentState;
     }
 }
