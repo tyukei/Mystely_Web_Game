@@ -32,6 +32,15 @@ public class GameView : MonoBehaviour
         tmpVersion.text = "version: " + Application.version;
     }
 
+    public void SetReset(){
+        objStart.SetActive(false);
+        objStory.SetActive(false);
+        objMystery.SetActive(false);
+        objExplain.SetActive(false);
+        objAdv.SetActive(false);
+        objStory2.SetActive(false);
+        objEnding.SetActive(false);
+    }
     // Start
     public void SetStart(bool isActive){
         objStart.SetActive(isActive);

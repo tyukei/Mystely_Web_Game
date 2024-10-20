@@ -9,14 +9,14 @@ public class CookieManager
     [DllImport("__Internal")]
     private static extern int GetCurrentState();
  
-    public void SetState(int state)
+    public void SetStateCookie(int state)
     {
         if (CheckWebGLPlatform()) {
             SetCurrentState(state);
         }
     }
  
-    public int GetState()
+    public int GetStateCookie()
     {
         int state = 0;
  
